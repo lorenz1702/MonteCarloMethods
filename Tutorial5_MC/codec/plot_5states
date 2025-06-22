@@ -1,0 +1,13 @@
+set term postscript color enhanced
+
+set output 'autocorrelation_5states.ps'
+plot [:30] 'autocorrelation.dat' u 2:5 t ''
+
+set output 'autocorrelation_5states_log.ps'
+set logscale y
+plot [:30] 'autocorrelation.dat' u 2:5 t ''
+unset logscale y
+
+set output 'blocking_5states.ps'
+set logscale x
+plot [0.1:] 'blocking.dat' u 1:2:3 w e t ''
